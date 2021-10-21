@@ -1,0 +1,1 @@
+simple_list = [ "hello", "world"]
