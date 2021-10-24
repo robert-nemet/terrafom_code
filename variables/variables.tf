@@ -4,27 +4,31 @@ variable "project_id" {
 }
 
 variable "secret" {
-  type = string
+  type        = string
   description = "project secret"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "label" {
-  type = string
+  type        = string
   description = "version label"
-  default = "v1.0.0"
+  default     = "v1.0.0"
 }
 
 variable "even_numbers" {
-  type = number
+  type        = number
   description = "variable with only even numbers"
   validation {
-    condition = var.even_numbers % 2 == 0
+    condition     = var.even_numbers % 2 == 0
     error_message = "Number is not even number."
   }
 }
 
 variable "simple_list" {
-  type = list(string)
+  type        = list(string)
   description = "list of strings"
+}
+
+variable "name" {
+  type = any
 }
