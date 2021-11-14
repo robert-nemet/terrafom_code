@@ -29,6 +29,27 @@ variable "simple_list" {
   description = "list of strings"
 }
 
+variable "simple_tuple" {
+  type        = tuple([string, number])
+  description = "list of strings"
+}
+
+variable "simple_set" {
+  type        = set(string)
+  description = "list of strings"
+}
+
+variable "dbase" {
+  description = "database definition"
+  type = object({
+    name = string
+    size = number
+    admin = object({
+      password = string
+    })
+  })
+}
+
 variable "name" {
-  type = any
+  type = string
 }
